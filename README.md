@@ -344,4 +344,3 @@ Digital Evidence Analysis Platform — Academic Prototype
 
 Built using Python, Streamlit, NLP, NetworkX, Ollama Cloud, and Gemma 4:31b.
 
-**Ippo GitHub-la `README.md` open → Edit ✏️ → old content full-a replace → Commit changes.**
