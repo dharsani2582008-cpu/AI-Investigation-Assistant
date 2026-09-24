@@ -10,8 +10,9 @@ from typing import Any
 
 import requests
 
-OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:60000")
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3:latest")
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "https://ollama.com")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma4:31b")
+OLLAMA_API_KEY = os.getenv("OLLAMA_API_KEY", "")
 OLLAMA_TIMEOUT = int(os.getenv("OLLAMA_TIMEOUT", "90"))
 
 SYSTEM_PROMPT = """You are an AI assistant for digital evidence analysis.
@@ -91,11 +92,17 @@ def ask_ollama(question: str, context: dict[str, Any]) -> str:
         "options": {"temperature": 0.1},
     }
     try:
-        response = requests.post(
-            f"{OLLAMA_BASE_URL}/api/generate",
-            json=payload,
-            timeout=OLLAMA_TIMEOUT,
-        )
+        headers = {
+    "Authorization": f"Bearer {OLLAMA_API_KEY}",
+    "Content-Type": "application/json",
+}
+
+response = requests.post(
+    f"{OLLAMA_BASE_URL}/api/generate",
+    headers=headers,
+    json=payload,
+    timeout=OLLAMA_TIMEOUT,
+)
         response.raise_for_status()
         data = response.json()
         answer = str(data.get("response", "")).strip()
