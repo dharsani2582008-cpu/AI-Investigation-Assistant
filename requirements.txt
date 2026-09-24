@@ -1,0 +1,17 @@
+# PHASE 1 + PHASE 2 + PHASE 3 + PHASE 4 dependencies.
+# Ollama client, ReportLab, etc. will be added in later phases as they
+# become needed.
+
+streamlit>=1.32
+pandas>=2.0
+openpyxl>=3.1
+PyMuPDF>=1.23
+spacy>=3.7
+networkx>=3.2
+plotly>=5.20
+requests>=2.31
+
+
+# After installing requirements, download the spaCy English model
+# (not a pip package, so it's not listed above):
+#   python -m spacy download en_core_web_sm
