@@ -15,3 +15,4 @@ requests>=2.31
 # After installing requirements, download the spaCy English model
 # (not a pip package, so it's not listed above):
 #   python -m spacy download en_core_web_sm
+reportlab
