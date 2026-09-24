@@ -1,4 +1,3 @@
-Yes bro 👍 This README is **outdated** — it still says Phase 1 and “local AI assistant.” Since we completed up to **Phase 8** and deployed it with **Ollama Cloud + Gemma 4:31b**, replace the GitHub `README.md` with this:
 
 # 🔍 AI Investigation Assistant
 
